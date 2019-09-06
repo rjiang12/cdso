@@ -1617,8 +1617,8 @@ input, select, textarea {
 
 		.image.featured {
 			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
+			width: 50%;
+			margin: 0 auto 2em auto;
 		}
 
 /* Button */
@@ -1655,7 +1655,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #f98780;
+			background-color: #748885;
 		}
 
 		input[type="button"].large,
@@ -1681,7 +1681,7 @@ input, select, textarea {
 			input[type="reset"].style1:hover,
 			button.style1:hover,
 			.button.style1:hover {
-				background-color: #f98780;
+				background-color: #748885;
 			}
 
 			input[type="button"].style1:active,
@@ -2270,6 +2270,10 @@ input, select, textarea {
 			margin: 0 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
+		}
+		
+		#highlights .highlight h3 i {
+			font-weight: 300;
 		}
 
 /* Main */
