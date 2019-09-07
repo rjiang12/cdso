@@ -1957,6 +1957,14 @@ input, select, textarea {
 		position: relative;
 		padding: 6em 0 9em 0;
 	}
+	
+	.subpage .wrapper {
+	    padding: 6em 0 3em 0;
+	}
+	
+	.scrollto {
+	    padding-top: 6em;
+	}
 
 		.wrapper .title {
 			position: absolute;
@@ -2037,6 +2045,10 @@ input, select, textarea {
 			.wrapper.style3 .image {
 				border: solid 10px #fff;
 			}
+			
+			.subpage .wrapper.style3 .image {
+				border: none;
+			}
 
 /* Page Wrapper */
 
@@ -2078,6 +2090,10 @@ input, select, textarea {
 
 		.homepage #header {
 			height: 35em;
+		}
+
+		.subpage #header {
+			height: 20em;
 		}
 
 /* Logo */
@@ -2287,7 +2303,7 @@ input, select, textarea {
 		padding-bottom: 6em;
 	}
 	
-	#footer.subpage {
+	.subpage #footer {
 		padding-bottom: 1em;
 		padding-top: 1em;
 	}
