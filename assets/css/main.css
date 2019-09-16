@@ -1839,6 +1839,10 @@ input, select, textarea {
 			padding-left: 3em;
 			position: relative;
 		}
+		
+		#projects .feature-list section {
+			border-color: #a8b1b0;
+		}
 
 		@media screen and (min-width: 981px) {
 
@@ -1849,6 +1853,10 @@ input, select, textarea {
 
 		}
 
+		#projects .feature-list h3 {
+		    color: #fff !important;
+		}
+		
 		.feature-list h3 {
 			color: #849895 !important;
 			margin: -0.35em 0 0.75em 0;
@@ -2102,7 +2110,8 @@ input, select, textarea {
 		width: 100%;
 		text-align: center;
 		position: relative;
-		top: 1.5em;
+		bottom: 1em;
+/* 		top: 1.5em; */
 	}
 
 		#logo h1 {
@@ -2267,12 +2276,16 @@ input, select, textarea {
 
 /* Features */
 
-	#features header.style1 {
+	#features header.style1, #projects header.style1 {
 		padding-bottom: 5em;
 	}
 
-	#features ul.actions {
+	#features ul.actions, #projects ul.actions {
 		margin-top: 5em;
+	}
+	
+	#projects {
+	    text-align: left;
 	}
 
 /* Highlights */
@@ -2953,11 +2966,11 @@ input, select, textarea {
 
 		/* Features */
 
-			#features header.style1 {
+			#features header.style1, #projects header.style1 {
 				padding-bottom: 4em;
 			}
 
-			#features ul.actions {
+			#features ul.actions, #projects ul.actions {
 				margin-top: 4em;
 			}
 
