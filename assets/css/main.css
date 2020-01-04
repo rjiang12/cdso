@@ -2136,6 +2136,20 @@ input, select, textarea {
 		    margin-top: 1em;
 		    width: 15em;
 		}
+	#sponsor {
+        width: 100%;
+		text-align: center;
+		height: 5em;
+		position: absolute;
+		bottom: 3em;
+	}
+	    #sponsor p {
+	        margin-bottom: 0;
+	    }
+	    #sponsor img {
+	        height: 2.2em;
+	    }
+
 
 /* Nav */
 
@@ -2921,7 +2935,7 @@ input, select, textarea {
 			}
 
 				.homepage #header {
-					height: 20em;
+					height: 30em;
 				}
 
 		/* Logo */
