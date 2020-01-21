@@ -2147,7 +2147,8 @@ input, select, textarea {
 	        margin-bottom: 0;
 	    }
 	    #sponsor img {
-	        height: 2.2em;
+	        max-height: 2.2em;
+	        max-width: 90%;
 	    }
 
 
