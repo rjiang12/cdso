@@ -26,7 +26,7 @@
             if (name == 'Baseline') {
                 cl = 'baseline';
             }
-            document.getElementById('leaderboard').innerHTML += '<tr class="' + cl + '"><td>' + name + '</td><td>' + score + '</td></tr>';
+            document.getElementById('leaderboard').innerHTML += '<tr class="' + cl + '"><td>' + (i+1).toString() + '</td><td>' + name + '</td><td>' + score + '</td></tr>';
         }
     }
 </script>
@@ -50,6 +50,14 @@ tr.baseline {
     background-color: #003B4C;
     color: #fff;
 }
+
+td {
+    width: 1em;
+}
+
+td + td {
+    width: auto;
+}
 </style>
 </head>
 
@@ -69,6 +77,7 @@ Last updated <span id="update"></span>. See the <a href="index.html">Caltech COV
   <table>
     <tbody id="leaderboard">
     <tr>
+      <th>#</th>
       <th>Team</th>
       <th>Score</th>
     </tr>
