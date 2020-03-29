@@ -78,6 +78,7 @@ If you are a student in CS 156b, please see the <a href="http://cs156.caltech.ed
     <ul>
       <li><em>May 25th.</em> Final submissions due.</li>
       <li><em>June 2nd (tentative).</em> Leaderboard prizes announced.</li>
+      <li><em>June 5th.</em> Final report due (required to be considered for report prize).</li>
       <li><em>June 19th (tentative).</em> Report prizes announced.</li>
     </ul>
 </div>
@@ -85,7 +86,7 @@ If you are a student in CS 156b, please see the <a href="http://cs156.caltech.ed
 <h2>Overview</h2>
 
 <h3>Task</h3>
-<p>The broad goal of this competition is to use a wide range of data to predict how COVID-19 will spread and affect the country in the near future. In particular, competitors will be asked to create a model which predicts, at any given point in time, what the fatality rate of COVID-19 will be in each county in the United States 2 weeks in the future.</p>
+<p>The broad goal of this competition is to use a wide range of data to predict how COVID-19 will spread and affect the country in the near future. In responding to this pandemic, predicting which areas will be hardest hit in the near future is critical for properly distributing medical resources and enacting public health policy. In service to this goal, students will be asked to create a model which predicts, at any given point in time, what the fatality rate of COVID-19 will be in each county in the United States 2 weeks in the future.</p>
 
 <h3>Prizes</h3>
 <p>Citadel and Citadel Securities have sponsored $10,000 worth of prizes for the winning teams. Of this, $5,000 will be distributed based purely on the final leaderboard rankings of the teams and the other $5,000 will be distributed based on evaluation by a panel of experts who will consider the quality, innovativeness, and robustness of the underlying model as well as observed performance. A well-written final report will be essential for having a chance at the second prize pool. Citadel and Citadel Securities ask for your resume if you’re interested in an internship or career there: either email <a href="mailto:datascience@caltech.edu">datascience@caltech.edu</a> or submit to <a href="https://docs.google.com/forms/d/e/1FAIpQLSej6IWhegXEjKtt8t7MBPCOuqnMzMwgGJKDAOTsY9SjKZSXvQ/viewform?usp=sf_link">Google Forms</a>.</p>
@@ -98,29 +99,37 @@ If you are a student in CS 156b, please see the <a href="http://cs156.caltech.ed
 The competition is being run as part of Prof. Yaser Abu-Mostafa's excellent <a href="http://cs156.caltech.edu/">CS 156b course</a>, but it is open to all of the Caltech community. Teams of up to four members may compete.
 Instructions for setting up a private repository from the curated datasets of the CS 156b TAs are available at <a href="https://docs.google.com/document/d/1l2QBnAZp54fhLm-oFgD6_9dBO-1exE8K_-mE_FeQ90A/edit?usp=sharing">Git Repo Initial Setup</a>.
 </p>
+<p>Teams outside of the class will be provided with access info for the Piazza page, which will contain links to useful resources and additional datasets as well as a forum for discussing modeling approaches with other teams.</p>
 
 <h3>Data</h3>
 <p>
-The CS 156b TAs will provide a canonical set of data for all competitors to use. Some of these data (e.g. demographics and past flu infection rates) will be fixed for the duration of the challenge. Other data (e.g. new COVID cases) will be changing in real time over the course of the competition. For these data the TAs will provide a script which teams can run in order to pull the most recent version of the data. It will be up to teams to manage how often they update the data being used to train their models. Each new download will contain all past versions of the variable datasets as well, so teams do not need to keep their own archives.
-The canonical data set will be uploaded to the <a href="https://github.com/quantummind/caltech_covid_19_modeling">competition GitHub</a>.
+The CS 156b TAs will provide a canonical set of data for all competitors to use. Some of these data (e.g. demographics and past flu infection rates) will be fixed for the duration of the challenge. Other data (e.g. new COVID cases) will be changing in real time over the course of the competition. All publicly available data will be distributed in the form of a git repo; instructions for accessing it are provided in the Initial Setup link above. It will be up to teams to manage how often they update the data being used to train their models. Each new update will contain all past versions of the variable datasets as well, so teams do not need to keep their own archives.
+</p>
+<p>
+In order to help with this research, Unacast has agreed to provide us with proprietary social distancing data which are not publicly available. Instructions for accessing these data will be posted on the Piazza page. These data should not be distributed outside of Caltech or used for any purpose outside of COVID-19 research.
+</p>
+<p>
+The canonical data set will be uploaded to the course HPC instance for teams to use. The dynamic data on the HPC will automatically be updated daily.
 </p>
 <p>
 The canonical dataset is intended to cover a wide range of factors which may influence COVID spread, and we anticipate that teams will be able to attain good performance with those data alone. However, teams are also welcome to use any additional publicly accessible datasets they find which they think may be useful. This does come with some conditions:
 </p>
 <ul>
-    <li>Any non-canonical dataset used in the generation of a weekly prediction submission must be disclosed via email to <a href="mailto:datascience@caltech.edu">datascience@caltech.edu</a> and <a href="mailto:dyurk@caltech.edu">dyurk@caltech.edu</a> containing a brief description of the dataset and a link to it.</li>
-    <li>The dataset will then be shared with the CS 156b class for general use.</li>
+    <li>Any non-canonical dataset used in the generation of a weekly prediction submission must be publicly disclosed on the Piazza page under the covid_datasets section in the form of a post containing a brief description of the dataset and a link to it.</li>
+    <li>Additional datasets will generally not be accessible on the HPC instance. If many teams begin to use the same additional dataset we may consider adding it to the HPC.</li>
 </ul>
 
-<h3>Submissions and leaderboard</h3>
-Each team is allowed up to 5 submissions per day on the <a href="https://evalai.cloudcv.org/">EvalAI</a> platform. The submission should consist of a CSV file with the following columns headers, containing an identifier followed by percentiles: id, 10, 20, 30, 40, 50, 60, 70, 80, 90. The id should be formatted as yyyy-mm-dd-fips (where "fips" is a 6-digit FIPS code) and extend from the date of submission to at least two weeks thereafter. Percentiles of predicted deaths should be formatted as integers or floats. The <a href="leaderboard.html">leaderboard</a> is updated daily from submissions.
+<h3>Evaluation Metric</h3>
+<p>In crafting a public health response to COVID-19 it is important to know many different things about its spread, including the number of infected individuals, the number of those infected requiring intensive care, and the mortality rate due to the disease. However, many of these metrics are highly sensitive to the availability of tests, a factor which cannot effectively be predicted. Thus, we are focusing on absolute mortality rate as an evaluation metric since it should closely reflect the true number of fatal incidences of the disease.</p>
 
-<h3>Scoring metric</h3>
-A <em>pinball loss</em> will be used to evaluate scores, encouraging predicted distributions to be both accurate and confident. A formal description of pinball loss is provided in the introduction of <a href="https://projecteuclid.org/euclid.bj/1297173840">this paper</a> and in <a href="http://www.lsta.upmc.fr/BIAU/bp.pdf">this paper</a>. If the metric proves unreliable in some way during the course of the competition, it may be substituted for a better metric.
+<p>The spread of COVID-19 is inherently semi-random an dependent on many external factors. In order to reflect this, rather than asking teams to predict a specific mortality rate we are asking them to predict a likelihood distribution of different mortality rates. A <em>pinball loss</em> will be used to evaluate scores, encouraging predicted distributions to be both accurate and confident. An introduction to this metric can be found at <a href="https://www.lokad.com/pinball-loss-function-definition#Formula_0">this webpage</a>, and more formal descriptions are provided in the introduction of <a href="https://projecteuclid.org/euclid.bj/1297173840">this paper</a> and in <a href="http://www.lsta.upmc.fr/BIAU/bp.pdf">this paper</a>. If the metric proves unreliable in some way during the course of the competition, it may be substituted for a better metric.</p>
+
+<h3>Submissions and leaderboard</h3>
+Each team is allowed up to 5 submissions per day on the <a href="https://evalai.cloudcv.org/">EvalAI</a> platform. The submission should consist of a CSV file with the following columns headers, containing an identifier followed by percentiles: id, 10, 20, 30, 40, 50, 60, 70, 80, 90. The id should be formatted as yyyy-mm-dd-fips (where "fips" is a 5-digit FIPS code) and extend from the date of submission to at least two weeks thereafter. Percentiles of predicted deaths should be formatted as integers or floats. The <a href="leaderboard.html">leaderboard</a> is updated daily from submissions. An example submission template file will be provided here after the team formation deadline.
 
 <h3>Collaboration and external code</h3>
 <p>
-As this research problem relates to an immediate public health concern, we do not wish to restrict teams from using whatever resources possible to construct the best models they can. As such, teams are allowed to collaborate as much as they want, up to and including exchange of code. Competitors are also allowed to examine and make use of code which has been publicly posted by research groups from other universities who have been working on COVID modeling. The only condition is that if a team uses any code they did not write (outside of standard data science or ML packages), they must email <a href="mailto:datascience@caltech.edu">datascience@caltech.edu</a> and <a href="mailto:dyurk@caltech.edu">dyurk@caltech.edu</a>. We ask under the honor code that competitors do not blindly copy and paste code which they do not understand.
+As this research problem relates to an immediate public health concern, we do not wish to restrict teams from using whatever resources possible to construct the best models they can. As such, teams are allowed to collaborate as much as they want, up to and including exchange of code. Students are also allowed to examine and make use of code which has been publicly posted by research groups from other universities who have been working on COVID modeling. The only condition is that if a team uses any code they did not write (outside of standard data science or ML packages), they must post a link to that code publicly on the Piazza forum and also mention it in their progress report. We ask under the honor code that challenge participants do not blindly copy and paste code which they do not understand.
 </p>
 
 
