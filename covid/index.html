@@ -68,7 +68,7 @@ If you are a student in CS 156b, please see the <a href="http://cs156.caltech.ed
     <ul>
         <li><a href="http://cs156.caltech.edu/netflix/">CS 156b COVID page</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="https://evalai.cloudcv.org/">Prediction submission on EvalAI</a> (max 5 per day)</li>
+        <li><a href="https://evalai.cloudcv.org/web/challenges/challenge-page/582/overview">Prediction submission on EvalAI</a> (max 5 per day)</li>
         <li><a href="https://github.com/quantummind/caltech_covid_19_modeling">Curated datasets</a></li>
         <li><a href="https://docs.google.com/document/d/1l2QBnAZp54fhLm-oFgD6_9dBO-1exE8K_-mE_FeQ90A/edit?usp=sharing">Git repo initial setup.</a></li>
         <li><a href="https://docs.google.com/document/d/1kZgvjgwsFRcTe7xLA62HHppWY92bzvfYwMItNhwZ6Nc/edit?usp=sharing">Google doc of papers, repos, and data.</a></li>
@@ -125,7 +125,7 @@ The canonical dataset is intended to cover a wide range of factors which may inf
 <p>The spread of COVID-19 is inherently semi-random and dependent on many external factors. In order to reflect this, rather than asking teams to predict a specific mortality rate we are asking them to predict a likelihood distribution of different mortality rates. A <em>pinball loss</em> will be used to evaluate scores, encouraging predicted distributions to be both accurate and confident. An introduction to this metric can be found at <a href="https://www.lokad.com/pinball-loss-function-definition#Formula_0">this webpage</a>, and more formal descriptions are provided in the introduction of <a href="https://projecteuclid.org/euclid.bj/1297173840">this paper</a> and in <a href="http://www.lsta.upmc.fr/BIAU/bp.pdf">this paper</a>. If the metric proves unreliable in some way during the course of the competition, it may be substituted for a better metric.</p>
 
 <h3>Submissions and leaderboard</h3>
-Each team is allowed up to 5 submissions per day on the <a href="https://evalai.cloudcv.org/">EvalAI</a> platform. The submission should consist of a CSV file with the following columns headers, containing an identifier followed by percentiles: id, 10, 20, 30, 40, 50, 60, 70, 80, 90. The id should be formatted as yyyy-mm-dd-fips (where "fips" is a 5-digit FIPS code) and extend from the date of submission to at least two weeks thereafter. Percentiles of predicted deaths should be formatted as integers or floats. The <a href="leaderboard.html">leaderboard</a> is updated daily from submissions. An example submission template file will be provided here after the team formation deadline.
+Each team is allowed up to 5 submissions per day on the <a href="https://evalai.cloudcv.org/web/challenges/challenge-page/582/overview">EvalAI</a> platform. The submission should consist of a CSV file with the following columns headers, containing an identifier followed by percentiles: id, 10, 20, 30, 40, 50, 60, 70, 80, 90. The id should be formatted as yyyy-mm-dd-fips (where "fips" is a 5-digit FIPS code) and extend from the date of submission to at least two weeks thereafter. Percentiles of predicted deaths should be formatted as integers or floats. The <a href="leaderboard.html">leaderboard</a> is updated daily from submissions. An example submission template file will be provided here after the team formation deadline.
 
 <h3>Collaboration and external code</h3>
 <p>
