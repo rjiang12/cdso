@@ -15,6 +15,24 @@
 		<link rel="shortcut icon" href="https://www.caltech.edu/static/core/img/favicon.ico">
 	</head>
 	<body class="homepage is-preload">
+        <script>
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '881236439434932',
+                xfbml      : true,
+                version    : 'v11.0'
+              });
+              FB.AppEvents.logPageView();
+            };
+          
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "https://connect.facebook.net/en_US/sdk.js";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+          </script>
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -189,6 +207,15 @@
 						</div>
 					</div>
 				</section>
+
+                <section>
+                    <div
+                        class="fb-like"
+                        data-share="true"
+                        data-width="450"
+                        data-show-faces="true">
+                        </div>
+                </section>
 
                 <section id="highlights" class="wrapper style4">
 					<div class="title">Our schedule</div>
