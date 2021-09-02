@@ -9,20 +9,6 @@ import InstagramEmbed from 'react-instagram-embed';
 (function($) {
 	
 
-	<InstagramEmbed
-		url='https://www.instagram.com/p/CTIKqAjJ_o_/'
-		clientAccessToken='IGQVJWV282VjVGM2NzNnpEWlFtVy1pbzNfOERTRFlkeURxMWxUQlJnUFVOU2x0ZAVNsQ0FtcDBJdDlmWTRuaW8yUFcxUElHNzBRd2tPV0lXb0h3d21nRVFtZAEFBX0czYU9fUHJxUzFhMjE1MTFIZADlRcAZDZD'
-		maxWidth={320}
-		hideCaption={false}
-		containerTagName='div'
-		protocol=''
-		injectScript
-		onLoading={() => {}}
-		onSuccess={() => {}}
-		onAfterRender={() => {}}
-		onFailure={() => {}}
-	/>
-
 	var	$window = $(window),
 		$body = $('body');
 
