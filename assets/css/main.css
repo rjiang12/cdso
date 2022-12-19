@@ -3042,3 +3042,15 @@ input, select, textarea {
 						}
 
 	}
+
+	@media screen and (max-width: 980px) and (max-height: 980px) {
+		#logo {
+			width: 95%;
+		}
+		#top-logo {
+			width: 95%;
+		}
+		#sponsor {
+			padding-top: 7.5%;
+		}
+	}
